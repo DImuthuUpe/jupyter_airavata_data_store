@@ -6,7 +6,7 @@ from __future__ import print_function
 import os
 import sys
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 pjoin = os.path.join
 here = os.path.abspath(os.path.dirname(__file__))
@@ -18,7 +18,7 @@ with open(pjoin(here, 'version.py')) as f:
 
 setup_args = dict(
     name                = 'jupyter_airavata_data_store',
-    packages            = ['jupyter_airavata_data_store'],
+    packages            = find_packages(include=['jupyter_airavata_data_store', 'jupyter_airavata_data_store.*']),
     version             = version_ns['__version__'],
     description         = """Jupyter Airavata Data Store: This overrides default Jupyter filesystem based storage with Airavata storage utilizing Airavata data catalog APIs.""",
     long_description    = "",
